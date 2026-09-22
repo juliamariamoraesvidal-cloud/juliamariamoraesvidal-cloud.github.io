@@ -49,8 +49,11 @@ a {
     transition: 0.3s;
 }
 
+/* Regra ajustada para todas as imagens respeitarem os limites */
 img {
     max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 
@@ -126,7 +129,7 @@ img {
 
     object-fit: cover;
 
-    margin-bottom: 25px;
+    margin: 0 auto 25px auto;
 
     border: 3px solid var(--main-color);
 
@@ -538,12 +541,14 @@ img {
 .project-images-container .project-image {
     flex: 1 1 calc(50% - 15px);
     min-width: 280px;
+    max-width: 100%;
 }
 
 .project-image {
     display: block;
 
     width: 100%;
+    max-width: 100%;
 
     height: auto;
 
