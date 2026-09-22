@@ -1,190 +1,843 @@
-/*Reset */
+/* =========================================================
+   RESET
+========================================================= */
+
 * {
     padding: 0;
     margin: 0;
-    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
-/*Variables */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--about-bg-color);
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
 
 :root {
     --main-color: #54B689;
-    --main-text-color: #FFF;
+    --main-text-color: #FFFFFF;
+    --secondary-text-color: #C7CED6;
+
     --border-color: #999;
     --big-bg-color: #1E2A3A;
     --bio-border-color: #293544;
     --about-bg-color: #111821;
+
+    --card-bg-color: #182330;
+    --card-hover-color: #1D2B3A;
 }
 
-/*General */
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
 .highlight {
     color: var(--main-color);
 }
 
-/*Containers */
+a {
+    transition: 0.3s;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 #container {
     display: flex;
     flex-direction: row;
+
+    width: 100%;
+    min-height: 100vh;
+
     color: var(--main-text-color);
 }
 
+
+/* =========================================================
+   BIO CONTAINER
+========================================================= */
+
 #bio-container {
-    flex: 1 1 20%;
+    flex: 0 0 280px;
+
     min-height: 100vh;
+
     background-color: var(--big-bg-color);
-    text-align: center; 
-    padding: 30px 12px;
+
+    text-align: center;
+
+    padding: 30px 16px;
+
     border-right: 5px solid var(--bio-border-color);
+
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
 }
 
-#about-container {
-    flex: 1 1 80%;
-    min-height: 100vh;
-    background-color: var(--about-bg-color);
-    padding: 50px;
-}
 
-/*Bio container */
+/* Nome da sidebar */
+
 #bio-container h2 {
+    font-size: 24px;
+
     margin-bottom: 25px;
 }
 
+
+/* Textos da sidebar */
+
 #bio-container p {
     margin-bottom: 20px;
+
+    line-height: 1.6;
 }
 
 #bio-container #welcome-text {
     font-weight: bold;
 }
 
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
+
 #bio-image {
     width: 175px;
     height: 175px;
+
     border-radius: 50%;
+
+    object-fit: cover;
+
     margin-bottom: 25px;
+
+    border: 3px solid var(--main-color);
+
+    padding: 2px;
 }
+
+
+/* =========================================================
+   SOCIAL CONTAINER
+========================================================= */
 
 #social-container {
     display: flex;
+
     justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
     list-style: none;
+
     border-bottom: 1px solid var(--border-color);
+
     margin-bottom: 25px;
+
     padding-bottom: 25px;
 }
 
+
 #social-container li {
-    flex: 1 1 0;
-    max-width: 60px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
 }
 
+
 #social-container li a {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
     color: var(--main-color);
+
     font-size: 30px;
+
+    line-height: 1;
+
+    text-decoration: none;
 }
+
+#social-container li a:hover {
+    color: var(--main-text-color);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
 
 #email-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 7px;
+    width: 100%;
 }
 
-#email-container ion-icon,
-#email-container a{
-    flex: 1 1 0;
+#email-container ion-icon {
+    flex: 0 0 auto;
+    color: var(--main-color);
+    font-size: 20px;
 }
 
 #email-container a {
     color: var(--main-color);
     text-decoration: none;
-    max-width: 225px;
+    font-size: 13px;
+    white-space: nowrap; 
 }
 
-#email-container ion-icon {
-    color: var(--main-color);
-    font-size: 20px;
-    margin-right: 5px;
-    max-width: 20px;
+#email-container a:hover {
+    color: var(--main-text-color);
 }
 
-/* About container */
+
+/* =========================================================
+   ABOUT CONTAINER
+========================================================= */
+
+#about-container {
+    flex: 1;
+
+    min-height: 100vh;
+
+    background-color: var(--about-bg-color);
+
+    padding: 50px;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
 #name {
     font-size: 42px;
+
     margin-bottom: 15px;
 }
+
+
+/* =========================================================
+   TITLE
+========================================================= */
 
 #title {
     font-size: 24px;
+
     margin-bottom: 15px;
+
     font-weight: bold;
 }
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .description {
     max-width: 80%;
-    margin-bottom: 10px;
+
+    color: var(--secondary-text-color);
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
 }
+
+
+/* =========================================================
+   PROJECT BUTTON
+========================================================= */
 
 #btn-projects {
-    font-weight: bold;
-    font-size: 16px;
-    color: var(--main-text-color);
-    background-color: var(--main-color);
-    border-radius: 5px;
-    text-decoration: none;
-    transition: .5s ;
-    margin: 25px 0;
-    padding: 12px 10px;
-    width: 150px;
-    text-align: center;
     display: flex;
-}
 
-#btn-projects ion-icon,
-#btn-projects span {
-    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 150px;
+
+    padding: 12px 10px;
+
+    margin: 25px 0;
+
+    color: var(--main-text-color);
+
+    background-color: var(--main-color);
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    transition: 0.5s;
 }
 
 #btn-projects ion-icon {
     font-size: 20px;
-    margin-right: 20px;
 }
 
 #btn-projects:hover {
     background-color: transparent;
+
+    color: var(--main-color);
+
+    border: 1px solid var(--main-color);
 }
 
-#skills-section-title {
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+#skills-section-title,
+#projects-section-title {
     border-top: 1px solid var(--border-color);
+
     padding-top: 20px;
+
     margin-top: 20px;
+
+    margin-bottom: 10px;
+
     font-size: 32px;
 }
 
+
+/* =========================================================
+   SKILLS CONTAINER
+========================================================= */
+
 .skills-container {
     display: flex;
+
     flex-wrap: wrap;
+
+    gap: 25px;
+
     margin-top: 25px;
 }
 
-.skills-box{
-    flex: 1 1 33%;
-    max-width: 33%;
-    margin-bottom: 35px;
+
+/* =========================================================
+   SKILL BOX
+========================================================= */
+
+.skills-box {
+    flex: 1 1 calc(33.333% - 25px);
+
+    max-width: calc(33.333% - 25px);
+
+    min-width: 200px;
+
+    margin-bottom: 10px;
+
+    padding: 20px;
+
+    background-color: var(--card-bg-color);
+
+    border: 1px solid transparent;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
 }
 
+.skills-box:hover {
+    background-color: var(--card-hover-color);
+
+    border-color: var(--main-color);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   SKILL TITLE
+========================================================= */
+
 .skills-title {
-    font-size: 24px;
-    margin-bottom: 25px;
+    font-size: 20px;
+
+    margin-bottom: 20px;
+
     font-weight: bold;
+
     padding-left: 10px;
+
     border-left: 5px solid var(--main-color);
 }
 
-.skills-box i,
-.skills-box img,
-.skills-box svg {
-    width: 45px;
-    height: 45px;
-    font-size: 45px;
+
+/* =========================================================
+   SKILL ICONS
+========================================================= */
+
+.skills-icons {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 10px;
+
+    min-height: 45px;
+}
+
+.skills-icons i,
+.skills-icons img,
+.skills-icons svg {
+    width: 42px;
+    height: 42px;
+
+    font-size: 42px;
+
     object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+#projects-section {
+    margin-top: 25px;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    margin-top: 25px;
+
+    max-width: 1100px;
+}
+
+
+/* =========================================================
+   PROJECT BOX
+========================================================= */
+
+.project-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: var(--card-bg-color);
+
+    border: 1px solid transparent;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    transition: 0.3s;
+}
+
+.project-box:hover {
+    background-color: var(--card-hover-color);
+
+    border-color: var(--main-color);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   PROJECT BUTTONS & CODE LINKS
+========================================================= */
+
+.btn-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 15px;
+    padding: 10px 16px;
+
+    background-color: var(--big-bg-color);
+    color: var(--main-text-color);
+
+    border: 1px solid var(--bio-border-color);
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.btn-code ion-icon {
+    font-size: 18px;
+    color: var(--main-color);
+}
+
+.btn-code:hover {
+    background-color: var(--main-color);
+    color: var(--main-text-color);
+    border-color: var(--main-color);
+}
+
+.btn-code:hover ion-icon {
+    color: var(--main-text-color);
+}
+
+
+/* =========================================================
+   PROJECT IMAGES & GALERIA LADO A LADO
+========================================================= */
+
+.project-images-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.project-images-container .project-image {
+    flex: 1 1 calc(50% - 15px);
+    min-width: 280px;
+}
+
+.project-image {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 500px;
+
+    object-fit: contain;
+
+    border-radius: 6px;
+}
+
+/* Indicador visual de imagem ampliável */
+.zoomable {
+    cursor: zoom-in;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.zoomable:hover {
+    filter: brightness(1.08);
+}
+
+
+/* =========================================================
+   MODAL LIGHTBOX COM SUPORTE A ZOOM
+========================================================= */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(4px);
+}
+
+/* Wrapper interno para suportar centralização e scroll no zoom */
+.modal-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    overflow: auto;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid var(--bio-border-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    animation-name: zoom;
+    animation-duration: 0.3s;
+    
+    /* Configuração de Interação Zoom */
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+}
+
+/* Estado de Zoom ativado via clique */
+.modal-content.is-zoomed {
+    transform: scale(2);
+    cursor: zoom-out;
+    max-width: none;
+    max-height: none;
+}
+
+@keyframes zoom {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+    position: fixed;
+    top: 15px;
+    right: 35px;
+    color: var(--main-text-color);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 1001;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    #bio-container {
+        flex: 0 0 230px;
+
+        padding: 30px 15px;
+    }
+
+    #bio-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    #about-container {
+        padding: 45px 35px;
+    }
+
+    #name {
+        font-size: 40px;
+    }
+
+    .description {
+        max-width: 90%;
+    }
+
+    .skills-box {
+        flex: 1 1 calc(50% - 25px);
+
+        max-width: calc(50% - 25px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    #container {
+        flex-direction: column;
+    }
+
+
+    /* -------------------------
+       BIO
+    ------------------------- */
+
+    #bio-container {
+        position: relative;
+
+        width: 100%;
+
+        min-height: auto;
+
+        flex: none;
+
+        padding: 35px 20px;
+
+        border-right: none;
+
+        border-bottom: 5px solid var(--bio-border-color);
+    }
+
+
+    #bio-image {
+        width: 150px;
+        height: 150px;
+    }
+
+
+    /* -------------------------
+       ABOUT
+    ------------------------- */
+
+    #about-container {
+        width: 100%;
+
+        padding: 40px 25px;
+    }
+
+
+    #name {
+        font-size: 36px;
+    }
+
+
+    #title {
+        font-size: 21px;
+    }
+
+
+    .description {
+        max-width: 100%;
+
+        font-size: 15px;
+    }
+
+
+    /* -------------------------
+       SKILLS
+    ------------------------- */
+
+    .skills-container {
+        gap: 20px;
+    }
+
+    .skills-box {
+        flex: 1 1 100%;
+
+        max-width: 100%;
+    }
+
+
+    /* -------------------------
+       PROJECTS
+    ------------------------- */
+
+    #skills-section-title,
+    #projects-section-title {
+        font-size: 28px;
+    }
+
+    .close {
+        top: 10px;
+        right: 20px;
+        font-size: 35px;
+    }
+
+    .project-images-container .project-image {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    #about-container {
+        padding: 35px 18px;
+    }
+
+
+    #name {
+        font-size: 32px;
+    }
+
+
+    #title {
+        font-size: 19px;
+    }
+
+
+    #btn-projects {
+        width: 100%;
+
+        max-width: 220px;
+    }
+
+
+    .skills-box {
+        padding: 18px;
+    }
+
+
+    .skills-title {
+        font-size: 18px;
+    }
+
+
+    .skills-icons i,
+    .skills-icons img,
+    .skills-icons svg {
+        width: 38px;
+        height: 38px;
+
+        font-size: 38px;
+    }
+
+
+    #email-container {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    #email-container a {
+        font-size: 13px;
+    }
 }
