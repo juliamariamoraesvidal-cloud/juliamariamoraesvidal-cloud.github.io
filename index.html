@@ -394,16 +394,29 @@
                             Script desenvolvido em Python para automação de aprovações em site corporativo. Robo realiza login, navega pelas páginas, preenche justificativas e submete aprovações automaticamente, economizando tempo e reduzindo erros manuais. Ele roda em nuvem, permitindo agendamento e execução remota, com logs detalhados para monitoramento. Ideal para processos repetitivos e de alto volume.
                         </p>
 
-                        <!-- Link apontando diretamente para o arquivo Python dentro da pasta do projeto -->
+                        <!-- Botão alterado para chamar a função JavaScript que mostra/oculta o código -->
                         <a 
-                            href="scripts/Automação - Robo Aprovador.py" 
-                            target="_blank" 
+                            href="#" 
+                            onclick="toggleCode('python-code-box'); return false;" 
                             class="btn-code"
                             style="display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; padding: 8px 16px; background-color: #23272a; color: #fff; text-decoration: none; border-radius: 6px; font-size: 0.85em;"
                         >
                             <ion-icon name="code-slash-outline"></ion-icon>
                             Ver Código Source (.py)
                         </a>
+
+                        <!-- CAIXA DE CÓDIGO (Inicia invisível e é revelada ao clicar no botão acima) -->
+                        <div id="python-code-box" style="display: none; margin-top: 15px; background-color: #11151a; border: 1px solid #293544; border-radius: 6px; padding: 15px; overflow-x: auto;">
+                            <pre style="margin: 0;"><code style="font-family: 'Courier New', Courier, monospace; font-size: 13px; color: #54B689;"># IMPORTANTE: APAGUE ESTA MENSAGEM E COLE O SEU CÓDIGO PYTHON AQUI.
+
+import time
+import pandas as pd
+
+def robo_aprovador():
+    print("Iniciando robô aprovador...")
+    # Cole o restante do seu código real aqui!
+                            </code></pre>
+                        </div>
 
                     </article>
 
@@ -465,8 +478,9 @@
         src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"
     ></script>
 
-    <!-- Script Lightbox Modal -->
+    <!-- Script Lightbox Modal e Toggle Code -->
     <script>
+        /* Funcionalidade das Imagens */
         function openModal(imageSrc) {
             const modal = document.getElementById("image-modal");
             const modalImg = document.getElementById("img-expanded");
@@ -484,6 +498,16 @@
                 closeModal();
             }
         });
+
+        /* NOVA FUNÇÃO: Mostrar/Ocultar Código Python na própria tela */
+        function toggleCode(elementId) {
+            var codeBox = document.getElementById(elementId);
+            if (codeBox.style.display === "none") {
+                codeBox.style.display = "block";
+            } else {
+                codeBox.style.display = "none";
+            }
+        }
     </script>
 
 </body>
